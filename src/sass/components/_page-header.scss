@@ -24,7 +24,7 @@
     @include center-text;
   }
   &__container {
-    margin: 20px;
+    margin: 20px auto;
     background: var(--gradient-background), url('../images/mobile-bg.png');
     @include background;
     display: flex;
@@ -65,8 +65,7 @@
   &__navigation__menu {
     @include row;
     gap: 4px;
-    padding-bottom: 8px;
-    padding-left: 0;
+    padding-bottom: 8px; 
     &--item {
       font-weight: 500;
       font-size: 12px;
@@ -150,7 +149,7 @@
       width: var(--width-max);
       max-width: 704px;
       height: 222px;
-      margin: 32px;
+      margin: 32px auto;
       &--navbar {
         display: flex;
         flex-direction: row-reverse;
