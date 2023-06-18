@@ -1,25 +1,25 @@
 {
-  "name": "filmoteka",
+  "name": "filmoteka-js",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/AlexandruMoldoveanu95/filmoteka-js",
+  "homepage": "https://luminitza24.github.io/filmoteka-js/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /filmoteka/"
+    "build": "parcel build src/*.html --public-url /filmoteka-js/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexandruMoldoveanu95/filmoteka-js"
+    "url": "git+https://github.com/luminitza24/filmoteka-js"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlexandruMoldoveanu95/filmoteka-js/issues"
+    "url": "https://github.com/luminitza24/filmoteka-js/issues"
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "modern-normalize": "^2.0.0"
+    "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
