@@ -19,7 +19,7 @@
     <section class="section__modal"> 
                 <img src="${r}" alt="${t.title}" loading="lazy" class="img_mvi" />
             
-            <ul  cllass="ul__list">
+            <ul  class="ul__list">
             <h1 class="tittle__modal">${t.title} </h1>
            
              <li class="vote_count">
@@ -43,7 +43,7 @@
                 </p>
             </li>
             <li>
-            <h3 class="detalii__info">about</h3>
+            <h3 class="details__info">about</h3>
                 <p gallery__items__details--info>${t.overview}</p>
             </li>
            <ul class="button_list">
@@ -57,4 +57,4 @@
         </ul>
         </section>
     `;eV.innerHTML=n},eK=async t=>{console.log("Open modal called with ID:",t);let e=await eH(t);e&&(eG(e),eW())},eY=()=>{let t=document.querySelectorAll(".gallery__items");t.forEach(t=>{t.addEventListener("click",async t=>{let e=t.currentTarget.dataset.id;eK(e)})});let e=document.querySelector("[data-modal-close]");e&&e.addEventListener("click",eW)},eX=document.querySelector("#form__search"),eQ=document.querySelector("#searchError");let eZ=1,e0="",e1=[];eX.addEventListener("submit",async t=>{t.preventDefault();let e=eX.querySelector('[name="searchQuery"]').value;if(""===e){eQ.textContent="Please write something";return}eQ.textContent="",e0!==e&&(e0=e,eZ=1,e2());try{let t=await eq(e0,eZ);e1=await ej(),eF(t,!1,e1),eY(),1!==eZ||t.results.length||(eQ.textContent="Search result not successful. Enter the correct movie name."),eX.reset()}catch(t){console.error(t),eQ.textContent="Error occurred. Please try again later."}});const e2=()=>{let t=document.querySelector(".gallery");t&&(t.innerHTML="")},e6=()=>document.querySelector(".gallery"),e5=async()=>{let t=e6();if(!t)return},e8=async()=>{try{!function(){var t=document.getElementById("loader");t&&(t.style.display="flex")}();let t=await ej(),e=await ez(1);eF(e,!0,t),eY(),function(){var t=document.getElementById("loader");t&&setTimeout(function(){t.style.display="none"},1e3)}()}catch(t){console.error("Error",t)}e5()};e8();
-//# sourceMappingURL=index.8e8b1c53.js.map
+//# sourceMappingURL=index.f0b51906.js.map
