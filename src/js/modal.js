@@ -15,30 +15,46 @@ const createModalContent = (movie) => {
     const coverUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : nullPoster;
     //console.log(movie.genre_ids);
     const markup = `
-        <ul>
-            <li> 
-                <img src="${coverUrl}" alt="${movie.title}" loading="lazy" style="height:200px; width:200px;" />
-            </li>
-            <li>
-                <p class="gallery__items__details--info">
-                    <b>Genres: ${genres.join(", ")}</b>
-                </p>
-            </li>
-            <li>
-                <p>${movie.overview}</p>
-            </li>
-            <li>
+    <section class="section__modal"> 
+                <img src="${coverUrl}" alt="${movie.title}" loading="lazy" class="img_mvi" />
+            
+            <ul  cllass="ul__list">
+            <h1 class="tittle__modal">${movie.title} </h1>
+           
+             <li class="vote_count">
                 <p>Vote Average: ${movie.vote_average}</p>
                 <p>Vote Count: ${movie.vote_count}</p>
             </li>
+            <li>
+            <p class="text__modal">
+            <b class"detalis"> popularity: ${movie.popularity}</b>
+            </p>
+            </li>
+            <li>
+            
+            <p class="text__modal">
+            <b class"detalis"> original_title: ${movie.original_title }</b>
+            </p>
+            </li>
+            <li>
+                <p class=" text__modal gallery__items__details--info">
+                    <b class"detalis">Genres: ${genres.join(", ")}</b>
+                </p>
+            </li>
+            <li>
+            <h3 class="detalii__info">about</h3>
+                <p gallery__items__details--info>${movie.overview}</p>
+            </li>
+           <ul class="button_list">
             <li>
             <button class="modal__button__item-queue" type="button">add to Watched</button>
             </li>
             <li>
             <button class="modal__button__item-queue" type="button"> add to queue</button>
             </li>
+            </ul>
         </ul>
- 
+        </section>
     `;
     
 
