@@ -18,7 +18,7 @@ const createModalContent = (movie) => {
     <section class="section__modal"> 
                 <img src="${coverUrl}" alt="${movie.title}" loading="lazy" class="img_mvi" />
             
-            <ul  cllass="ul__list">
+            <ul  class="ul__list">
             <h1 class="tittle__modal">${movie.title} </h1>
            
              <li class="vote_count">
@@ -42,7 +42,7 @@ const createModalContent = (movie) => {
                 </p>
             </li>
             <li>
-            <h3 class="detalii__info">about</h3>
+            <h3 class="details__info">about</h3>
                 <p gallery__items__details--info>${movie.overview}</p>
             </li>
            <ul class="button_list">
