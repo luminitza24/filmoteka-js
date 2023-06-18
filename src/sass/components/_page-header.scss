@@ -16,7 +16,7 @@
   margin: 0 auto;
 }
 
-.header {
+.header { 
   &__title {
     font-weight: 500;
     font-size: 32px;
@@ -24,7 +24,7 @@
     @include center-text;
   }
   &__container {
-    margin: 20px;
+    margin: 20px auto;
     background: var(--gradient-background), url('../images/mobile-bg.png');
     @include background;
     display: flex;
@@ -65,8 +65,7 @@
   &__navigation__menu {
     @include row;
     gap: 4px;
-    padding-bottom: 8px;
-    padding-left: 0;
+    padding-bottom: 8px; 
     &--item {
       font-weight: 500;
       font-size: 12px;
@@ -109,18 +108,79 @@
     }
   }
 
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .header__container {
-      background: var(--gradient-background), url('../images/mobile-bg@2x.png');
-      background-size: cover;
+  &__search {
+    position: relative;
+    input {
+      height: 34px;
+      margin: 0 auto;
+      border-radius: 100px;
+      padding: 10px 0 10px 14px;
+      background-color: var(--main-color);
+      border: none;
+      width: var(--width-max);
+      transition: border-color 0.5s ease-out;
+      &:focus {
+        border: 3px solid var(--dark-color);
+        outline: none;
+        color: var(--hover-color);
+      }
+    }
+    button {
+      position: absolute;
+      background-color: transparent;
+      right: 14px;
+      bottom: 0;
+      padding: 0;
+      margin: 0 auto;
+      border: none;
+      cursor: pointer;
+      &:hover .header__search__container--icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__container {
+      position: relative;
+      &--icon {
+        width: 16px;
+        height: 16px;
+        fill: var(--main-color);
+        stroke: var(--dark-color);
+        :hover {
+          stroke: var(--hover-color);
+        }
+      }
+      &--error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 10px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        color: var(--main-color);
+        padding: 8px 0 8px 15px;
+        width: 180px;
+      }
     }
   }
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+.header__container {
+  background: var(--gradient-background), url('../images/mobile-bg@2x.png');
+  background-size: cover;
+}
 }
 @media (min-width: 768px) {
   .container {
     width: 768px;
+  }
+  ::placeholder {
+    font-size: 14px;
+    line-height: 16px;
   }
   .header {
     &__title {
@@ -150,7 +210,7 @@
       width: var(--width-max);
       max-width: 704px;
       height: 222px;
-      margin: 32px;
+      margin: 32px auto;
       &--navbar {
         display: flex;
         flex-direction: row-reverse;
@@ -175,6 +235,23 @@
       padding: 12px 24px;
       a {
         color: var(--dark-color);
+      }
+    }
+    
+    &__search {
+      input {
+        height: 38px;
+        width: 165px;
+        padding: 11px 0 11px 14px;
+      }
+      button {
+        right: 11px;
+      }
+      &__container {
+        &--error {
+          padding: 10px 0 10px 15px;
+          width: 165px;
+        }
       }
     }
   }
@@ -217,6 +294,22 @@
     }
     &__navigation__menu--item {
       padding: 12px 24px;
+    }
+    
+    &__search {
+      input {
+        height: 42px;
+        padding: 13px 0 13px 16px;
+      }
+      button {
+        right: 11px;
+      }
+      &__container {
+        &--error {
+          padding: 10px 0 10px 15px;
+          width: 185px;
+        }
+      }
     }
   }
   @media screen and (min-device-pixel-ratio: 2),
