@@ -31,8 +31,16 @@ const createModalContent = (movie) => {
                 <p>Vote Average: ${movie.vote_average}</p>
                 <p>Vote Count: ${movie.vote_count}</p>
             </li>
+            <li>
+            <button class="modal__button__item-queue" type="button">add to Watched</button>
+            </li>
+            <li>
+            <button class="modal__button__item-queue" type="button"> add to queue</button>
+            </li>
         </ul>
+ 
     `;
+    
 
     modalContent.innerHTML = markup;
 };
