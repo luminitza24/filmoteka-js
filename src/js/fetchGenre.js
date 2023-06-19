@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_KEY = '44cd7d40e9c9ffc80f6b2e51bac6d9ee';
 const URL = 'https://api.themoviedb.org/3';
 
-const getGenres = (genreIds, genres) => {
+const getGenres = (genreIds, genres, totalPages, totalResults) => {
   const arr = [];
 
   for (const id of genreIds) {
