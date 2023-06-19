@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 35px;
   z-index: 99;
@@ -12,6 +12,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .modal__is-hidden {
