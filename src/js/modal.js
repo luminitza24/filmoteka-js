@@ -53,7 +53,7 @@ const createModalContent = movie => {
             </li>
            <ul class="button_list">
             <li>
-            <button class="modal__button__item-queue" type="button">add to watched</button>
+            <button class="modal__button__item-watched" type="button">add to watched</button>
             </li>
             <li>
             <button class="modal__button__item-queue" type="button"> add to queue</button>

@@ -4,6 +4,7 @@ import { fetchPopularMovies } from './fetchmvs';
 import './search';
 import { initializeModal } from './modal';
 import { showLoader, hideLoader } from './loader.js';
+import { getMovieFromLocalStorage, openQueue, openWatched } from './library';
 
 const currentPage = 1;
 
