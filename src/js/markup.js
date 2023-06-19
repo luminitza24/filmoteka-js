@@ -1,4 +1,7 @@
-import { getGenres } from './fetchGenre';
+
+import { fetchGenreList, getGenres } from './fetchGenre';
+import { clearGallery } from './galleryClear';
+
 
 const nullPoster = `https://tacm.com/wp-content/uploads/2018/01/no-image-available.jpeg`;
 
@@ -6,7 +9,8 @@ const handleResponse = (data, isPopular = false, genreList) => {
   if (!data.results) {
     console.error('Invalid API response');
     return;
-  }
+  } 
+  clearGallery(); 
 
   const galleryElement = getGalleryElement();
   if (!galleryElement) {
@@ -52,6 +56,7 @@ const markupGalleryItem = (result, index, genreList, isPopular = false) => {
     `;
 };
 
-const getGalleryElement = () => document.querySelector('.gallery');
+const getGalleryElement = () => document.querySelector('.gallery')
 
-export { handleResponse, markupGalleryItem };
+export { handleResponse, markupGalleryItem, getGalleryElement };
+

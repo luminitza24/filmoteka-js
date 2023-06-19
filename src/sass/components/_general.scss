@@ -36,4 +36,20 @@ a {
 body.dark {
   background-color: #23262d;
   color: white;
+  .team__list__item {
+    background-color: #23262d;
+    color: white;
+    &__description__role {
+      color: var(--main-color);
+    }
+    &__social__link {
+      background-color: #ccc;
+      margin: 10px;
+    }
+  }
+  .gallery__items{
+    background-color: #23262d;
+    color: white;
+    border:1px solid var(--main-color);
+  }
 }
