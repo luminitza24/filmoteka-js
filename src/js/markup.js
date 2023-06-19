@@ -51,5 +51,7 @@ const markupGalleryItem = (result, index, genreList, isPopular = false) => {
   </li>
     `;
 };
+
 const getGalleryElement = () => document.querySelector('.gallery');
+
 export { handleResponse, markupGalleryItem };
