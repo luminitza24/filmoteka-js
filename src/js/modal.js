@@ -8,7 +8,6 @@ const toggleModal = () => {
 };
 
 const createModalContent = movie => {
-  //console.log(movie);
   const genres = movie.genres
     ? movie.genres.map(genre => genre.name)
     : ['Unknown'];
@@ -26,26 +25,26 @@ const createModalContent = movie => {
             <ul  class="ul__list">
            
              <li>
-                <p class="vote__count"> Vote/Votes <b class="details">${
+                <p class="vote__count">  <b class="details"> Vote/Votes ${
                   movie.vote_average
                 }</b></p></li>
-               <li> <p class="vote__count"> Vote <b class="details"${
+               <li> <p class="vote__count"> Vote <b class="details">${
                  movie.vote_count
                }</b></p>
             </li>
-            <li >
-            <p class="vote__count > popularity
-            <b class="details">  ${movie.popularity}</b>
+            <li>
+            <p class="vote__count > 
+            <b class="details"> popularity ${movie.popularity}</b>
             </p>
             </li>
             <li>
-            <p class="vote__count> original title
-            <b class="details">  ${movie.original_title}</b>
+            <p class="vote__count>
+            <b class="details">  Original Title ${movie.original_title}</b>
             </p>
             </li>
             <li>
-                <p class="vote__count> Genre
-                    <b class="details"> ${genres.join(', ')}</b>
+                <p class="vote__count> 
+                 <b class="details"> Genre  ${genres.join(', ')}</b>
                 </p>
             </li>
             <li>
