@@ -11,8 +11,11 @@
 @import '../sass/utils/mixin';
 
 @import '../sass/components/general';
-@import '../sass/components/page-header';
-@import '../sass/components/search';
-@import '../sass/components/modalMovies';
-@import '../sass/components/library';
+
+@import '../sass/components/page-header';  
+@import '../sass/components/search';  
+@import '../sass/components/movies';  
+@import '../sass/components/modalMovies'; 
+@import '../sass/components/library'; 
 @import '../sass/components/loader';
+@import '../sass/components/page-footer';

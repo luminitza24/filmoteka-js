@@ -24,36 +24,36 @@ const createModalContent = movie => {
   <h1 class="title__modal">${movie.title} </h1>
             <ul  class="ul__list">
            
-             <li>
+             <li class="gallery__modal">
                 <p class="vote__count">  <b class="details"> Vote/Votes ${
                   movie.vote_average
                 }</b></p></li>
-               <li> <p class="vote__count"> Vote <b class="details">${
+               <li class="gallery__modal"> <p class="vote__count"> Vote <b class="details">${
                  movie.vote_count
                }</b></p>
             </li>
-            <li>
+            <li class="gallery__modal">
             <p class="vote__count > 
             <b class="details"> popularity ${movie.popularity}</b>
             </p>
             </li>
-            <li>
+            <li class="gallery__modal">
             <p class="vote__count>
             <b class="details">  Original Title ${movie.original_title}</b>
             </p>
             </li>
-            <li>
+            <li class="gallery__modal">
                 <p class="vote__count> 
                  <b class="details"> Genre  ${genres.join(', ')}</b>
                 </p>
             </li>
-            <li>
+            <li class="gallery__modal">
             <h3 class="details__info">about</h3>
                 <p class="text__modal">${movie.overview}</p>
             </li>
            <ul class="button_list">
             <li>
-            <button class="modal__button__item-watched" type="button">add to watched</button>
+            <button class="modal__button__item-queue" type="button">add to watched</button>
             </li>
             <li>
             <button class="modal__button__item-queue" type="button"> add to queue</button>

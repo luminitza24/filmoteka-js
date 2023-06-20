@@ -3,11 +3,11 @@ import axios from 'axios';
 const API_KEY = '44cd7d40e9c9ffc80f6b2e51bac6d9ee';
 const URL = 'https://api.themoviedb.org/3';
 
-const getGenres = (genreIds, genres) => {
+const getGenres = (genreIds, genres, totalPages, totalResults) => {
   const arr = [];
 
   for (const id of genreIds) {
-    const genre = genres.find((genre) => genre.id === id);
+    const genre = genres.find(genre => genre.id === id);
     if (genre) {
       arr.push(genre.name);
     }
@@ -22,7 +22,9 @@ const getGenres = (genreIds, genres) => {
 
 const fetchGenreList = async () => {
   try {
-    const response = await axios.get(`${URL}/genre/movie/list?api_key=${API_KEY}`);
+    const response = await axios.get(
+      `${URL}/genre/movie/list?api_key=${API_KEY}`
+    );
     const genres = response.data.genres;
     return genres;
   } catch (error) {
