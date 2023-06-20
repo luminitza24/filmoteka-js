@@ -17,21 +17,27 @@ const createModalContent = movie => {
     : nullPoster;
   //console.log(movie.genre_ids);
   const markup = `
-    <section class="section__modal"> 
+     
                 <img src="${coverUrl}" alt="${
     movie.title
   }" loading="lazy" class="img_movie" />
+  
+  <ul  class="ul__list"> 
   <h1 class="title__modal">${movie.title} </h1>
-            <ul  class="ul__list">
+           <section class="section__modal">
            
              <li class="gallery__modal">
-                <p class="vote__count">  <b class="details"> Vote/Votes ${
+                <p class="vote__count"> Vote/Votes 
+                <b class="details">  ${
                   movie.vote_average
-                }</b></p></li>
-               <li class="gallery__modal"> <p class="vote__count"> Vote <b class="details">${
+                }</b>
+                <b >/</b>
+                 <b >${
                  movie.vote_count
-               }</b></p>
-            </li>
+               }</b>
+                </p>
+                </li>
+               
             <li class="gallery__modal">
             <p class="vote__count > 
             <b class="details"> popularity ${movie.popularity}</b>
@@ -39,12 +45,12 @@ const createModalContent = movie => {
             </li>
             <li class="gallery__modal">
             <p class="vote__count>
-            <b class="details">  Original Title ${movie.original_title}</b>
+            <b class="details">Original Title ${movie.original_title}</b>
             </p>
             </li>
             <li class="gallery__modal">
                 <p class="vote__count> 
-                 <b class="details"> Genre  ${genres.join(', ')}</b>
+                 <b class="details">Genre${genres.join(', ')}</b>
                 </p>
             </li>
             <li class="gallery__modal">
