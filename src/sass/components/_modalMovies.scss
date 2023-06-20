@@ -1,14 +1,14 @@
 .modal {
   width: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 20px;
-  left: 35px;
-  z-index: 99;
-  border: 1px solid black;
+  top: 0;
+  left: 0;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -42,28 +42,40 @@
 .modal__content {
   margin: 0 auto;
   width: 285px;
-  border: 2px solid blue;
+  border: 1px solid rgb(25, 25, 102);
   background-color: var(--main-color);
   padding: 60px 15px;
+  display: flex;
+  justify-content: center;
+  -webkit-box-shadow: inset 0px 0px 20px -2px rgba(199,48,199,1);
+  -moz-box-shadow: inset 0px 0px 20px -2px rgba(199,48,199,1);
+  box-shadow: inset 0px 0px 20px -2px rgba(199,48,199,1);
 }
 
 .img_movie {
   width: 240px;
+  min-height: 357px;
   border-radius: 5px;
+  align-items: center;
+  padding-left: 55px;
 }
 .title__modal {
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 23px;
-  color: black;
+  color: rgb(243, 180, 19);
   text-transform: uppercase;
-  padding-top: 20px;
+  border-radius: 3px;
+  
 }
 .ul__list {
-  border: 2px solid red;
+  border: 1px solid rgb(90, 72, 72);
   padding: 20px 20px;
   gap: 8px;
+  -webkit-box-shadow: 0px 0px 20px -2px rgba(194,68,101,1);
+-moz-box-shadow: 0px 0px 20px -2px rgba(194,68,101,1);
+box-shadow: 0px 0px 20px -2px rgba(194,68,101,1);
 }
 .vote__count {
   font-family: Roboto;
@@ -86,6 +98,7 @@
   font-size: 12px;
   line-height: 1.67;
   color: #000;
+  background-color: #e0841a;
 }
 .details__info {
   font-family: 'Roboto';
@@ -121,28 +134,28 @@
   line-height: 1.33;
   text-transform: uppercase;
 
-  transition-property: transform, background-color;
-  transition-duration: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
 
   &:hover,
   &:focus {
     transform: scale(1.05);
-    background-color: var(--button-color);
-    color: #ffff;
+    background-color: #e0841a;
+    color: #9f1313;
     border-style: none;
   }
 }
 @media screen and (min-width: 768px) {
   .modal__content {
     background-color: var(--main-color);
-    width: 618px;
+    width: 704px;
+    min-height: 502px;
     padding: 60px 15px;
   }
+
+  
 }
 @media screen and (min-width: 1280px) {
+  
   .modal__content {
     max-width: 100%;
     padding: 60px 15px;
