@@ -5,7 +5,7 @@ import './search';
 import './footer'; 
 import { initializeModal } from './modal';
 import { showLoader, hideLoader } from './loader.js';
-import { showPage } from './page.js'; 
+//import { showPage } from './page.js'; 
 import { getGalleryElement } from './utils';
 
 const currentPage = 1;
@@ -29,7 +29,7 @@ const initializeApp = async () => {
   }
 
   initialize();
-  showPage(currentPage);   
+ // showPage(currentPage);   
 };
 
 initializeApp();
