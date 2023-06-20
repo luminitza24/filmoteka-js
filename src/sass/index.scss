@@ -1,17 +1,8 @@
-@import '../sass/utils/variables';
-@import '../sass/utils/mixin';
-
-@import '../sass/components/general';
-@import '../sass/components/page-header';
-@import '../sass/components/search';
-@import '../sass/components/modalMovies';
-@import '../sass/components/movies';
 
 @import '../sass/utils/variables';
 @import '../sass/utils/mixin';
 
 @import '../sass/components/general';
-
 @import '../sass/components/page-header';  
 @import '../sass/components/search';  
 @import '../sass/components/movies';  
@@ -19,3 +10,4 @@
 @import '../sass/components/library'; 
 @import '../sass/components/loader';
 @import '../sass/components/page-footer';
+@import '../sass/components/scroll';
