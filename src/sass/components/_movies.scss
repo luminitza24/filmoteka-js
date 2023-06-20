@@ -1,15 +1,11 @@
 .movie-container {
-<<<<<<< HEAD
-=======
-  width: 480px;
->>>>>>> 0b5a08975b24fd54916d37bf3d44008ac3e00f26
   margin: 0, auto;
   max-width: 100%;
   justify-content: center;
   align-items: center;
 }
 .gallery {
-  margin: 60px, auto;
+  margin: 60px, auto, 50px, auto;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +23,6 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-<<<<<<< HEAD
     padding: 25px;
     &__img img {
       max-width: 500px;
@@ -51,39 +46,8 @@
       }
     }
   }
-=======
-    padding:25px;
-    transition: transform var(--duration) var(--cubic-bezier);
-    overflow: hidden;
-    border-radius: 15px;
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-  &__items__details {
-    width: 100%;
-    margin-top: 10px;
-    align-items: flex-start;
-  }
 }
 
-.gallery__items__details--info {
-  color: var(--button-color);
-  display: inline;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-}
-.gallery__items__img img{
-  max-width: 500px;
-  max-height:700px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
->>>>>>> 0b5a08975b24fd54916d37bf3d44008ac3e00f26
-}
 .title {
   margin-top: 10px;
   font-family: var(--main-font);
@@ -94,42 +58,6 @@
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
-=======
-.button-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-.right-button {
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  border-style: none;
-  &:hover,
-  &:active {
-    background-color: var(--button-color);
-    color: var(--main-color);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: transform var(--duration) var(--cubic-bezier);
-  }
-}
-#pagination-button {
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  border-style: none;
-  &:hover,
-  &:active {
-    background-color: var(--button-color);
-    color: var(--main-color);
-  }
-}
->>>>>>> 0b5a08975b24fd54916d37bf3d44008ac3e00f26
 #year {
   padding-left: 10px;
   border-left: 1px solid var(--button-color);
@@ -161,6 +89,7 @@
     }
   }
 }
+
 .number-buttons {
   display: flex;
   flex-wrap: nowrap;
