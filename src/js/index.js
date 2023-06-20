@@ -5,9 +5,9 @@ import { handleResponse, getGalleryElement } from './markup';
 import { fetchPopularMovies } from './fetchmvs';
 import './search'; 
 import { initializeModal } from './modal';
-import { showLoader, hideLoader } from './loader.js';
+import { showLoader, hideLoader } from './loader.js'; 
 import { showPage }  from './page.js'; 
-
+import { getGalleryElement } from './utils';
 const currentPage = 1;
 
 const initialize = () => {
@@ -26,6 +26,5 @@ const initializeApp = async () => {
   } catch (error) {
     console.error('Error', error);
   }
-  initialize();
-}; 
+  initialize(); 
 initializeApp();
