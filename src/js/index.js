@@ -1,30 +1,30 @@
-
 import { getGalleryElement } from './utils';
 import { fetchGenreList } from './fetchGenre';
 import { handleResponse, getGalleryElement } from './markup';
 import { fetchPopularMovies } from './fetchmvs';
-import './search'; 
+import './search';
 import { initializeModal } from './modal';
-import { showLoader, hideLoader } from './loader.js'; 
-import { showPage }  from './page.js'; 
+import { showLoader, hideLoader } from './loader.js';
+import { showPage } from './page.js';
 import { getGalleryElement } from './utils';
 const currentPage = 1;
 
 const initialize = () => {
-  getGalleryElement(); 
+  getGalleryElement();
 };
 
 const initializeApp = async () => {
   try {
     showLoader();
-    showPage(currentPage);    
+    showPage(currentPage);
     const genreList = await fetchGenreList();
-    const popularMovies = await fetchPopularMovies(currentPage); 
-    handleResponse(popularMovies, true, genreList);  
+    const popularMovies = await fetchPopularMovies(currentPage);
+    handleResponse(popularMovies, true, genreList);
     initializeModal();
-    hideLoader(); 
+    hideLoader();
   } catch (error) {
     console.error('Error', error);
   }
-  initialize(); 
+  initialize();
+};
 initializeApp();
