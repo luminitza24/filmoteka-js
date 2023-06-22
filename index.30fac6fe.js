@@ -18,49 +18,43 @@
     </div>
   </li>
     `},eM=()=>document.querySelector(".gallery"),eq="44cd7d40e9c9ffc80f6b2e51bac6d9ee",ez="https://api.themoviedb.org/3",eH=async(t,e)=>{try{let r=await ew.get(`${ez}/search/movie?api_key=${eq}&query=${t}&include_adult=false&language=en-US&page=${e}`);return console.log(r.data),r.data}catch(t){console.error("Something went wrong with the API search fetch: "+t)}},eJ=async t=>{try{let e=`${ez}/trending/movie/week?api_key=${eq}&page=${t}`,r=await ew.get(e);return console.log(r.data),r.data}catch(t){throw console.error("Error - popular movies: ",t),t}},eV=async t=>{try{let e=await ew.get(`${ez}/movie/${t}?api_key=${eq}&language=en-US`);return console.log(e.data),e.data}catch(t){throw console.error("Error - movie details: ",t),t}};document.querySelector(".number-buttons");const eW=document.getElementById("numberButtonsContainer");function eG(t){let e=document.createElement("button");return e.innerText=t,e.classList.add("pagination__button"),e.setAttribute("data-page",t),e}((t,e)=>{e.innerHTML="";for(let t=2;t<=6;t++){let r=eG(t-1);1==t-1&&r.classList.add("active"),e.appendChild(r)}(function(){let t=document.createElement("button");t.innerText="►",t.classList.add("next-btn"),t.disabled=!1,t.addEventListener("click",()=>{eK+=5,eY()});let e=document.getElementById("numberButtonsContainer");e.parentNode.insertBefore(t,e.nextSibling)})(),function(){let t=document.createElement("button");t.innerText="◄",t.classList.add("prev-btn"),t.disabled=!1,t.addEventListener("click",()=>{(eK-=5)<1&&(eK=1),eY()});let e=document.getElementById("numberButtonsContainer");e.parentNode.insertBefore(t,e)}(),1!==t&&e.appendChild(eG(t))})(1,eW);let eK=1;function eY(){let t=eK,e=t+5-1,r=document.querySelectorAll(".number-buttons .pagination__button");r.forEach(t=>{eW.removeChild(t)});for(let r=t;r<=e;r++){let t=eG(r);eW.appendChild(t),t.addEventListener("click",()=>{let e=t.getAttribute("data-page");eX(e)})}}eY();const eX=async(t,e=!1,r="")=>{try{let n;let o=await eF();n=e?await eH(r,t):await eJ(t),eD(n,e,o)}catch(t){console.error("Error",t)}},eQ=document.querySelectorAll(".pagination__button");eQ.forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.page,r="true"===t.dataset.search;eX(e,r,"")})});const eZ=document.querySelector(".modal"),e0=eZ.querySelector(".modal__content"),e1=()=>{eZ.classList.toggle("modal__is-hidden")},e2=t=>{let e=t.genres?t.genres.map(t=>t.name):["Unknown"],r=t.poster_path?`https://image.tmdb.org/t/p/w500${t.poster_path}`:nullPoster,n=`
-     
+    
                 <img src="${r}" alt="${t.title}" loading="lazy" class="img_movie" />
-  
-  <ul  class="ul__list"> 
+  <section class="section__modal"> 
   <h1 class="title__modal">${t.title} </h1>
-           <section class="section__modal">
-           
+            <ul  class="ul__list">
              <li class="gallery__modal">
-                <p class="vote__count"> Vote/Votes 
-                <b class="details">  ${t.vote_average}</b>
-                <b >/</b>
-                 <b >${t.vote_count}</b>
-                </p>
+                <p class="vote__count">Vote/Votes  <b class="details">${t.vote_average}</b>  <b >/</b>
+                 <b>${t.vote_count}</b>
                 </li>
-               
             <li class="gallery__modal">
-            <p class="vote__count > 
-            <b class="details"> popularity ${t.popularity}</b>
+            <p class="vote__count >
+            <b class="details">popularity:${t.popularity}</b>
             </p>
             </li>
             <li class="gallery__modal">
             <p class="vote__count>
-            <b class="details">Original Title ${t.original_title}</b>
+            <b class="details">Original Title:${t.original_title}</b>
             </p>
             </li>
             <li class="gallery__modal">
-                <p class="vote__count> 
-                 <b class="details">Genre${e.join(", ")}</b>
+                <p class="vote__count>
+                 <b class="details">Genre:${e.join(", ")}</b>
                 </p>
             </li>
             <li class="gallery__modal">
             <h3 class="details__info">about</h3>
                 <p class="text__modal">${t.overview}</p>
             </li>
-           <ul class="button_list">
+        </ul>
+        <ul class="button_list">
             <li>
-            <button class="modal__button__item-queue" type="button">add to watched</button>
+            <button class="modal__button__item-watched" type="button">add to watched</button>
             </li>
             <li>
             <button class="modal__button__item-queue" type="button"> add to queue</button>
             </li>
             </ul>
-        </ul>
         </section>
-    `;e0.innerHTML=n},e6=async t=>{console.log("Open modal called with ID:",t);let e=await eV(t);e&&(e2(e),e1())},e5=()=>{let t=document.querySelectorAll(".gallery__items");t.forEach(t=>{t.addEventListener("click",async t=>{let e=t.currentTarget.dataset.id;e6(e)})});let e=document.querySelector("[data-modal-close]");e&&e.addEventListener("click",e1)},e8=document.querySelector("#form__search"),e4=document.querySelector("#searchError");let e3=1,e7="",e9=[];e8.addEventListener("submit",async t=>{t.preventDefault();let e=e8.querySelector('[name="searchQuery"]').value;if(""===e){e4.textContent="Please write something";return}e4.textContent="",e7!==e&&(e7=e,e3=1,ek());try{let t=await eH(e7,e3);e9=await eF(),eD(t,!1,e9),e5(),1!==e3||t.results.length||(e4.textContent="Search result not successful. Enter the correct movie name."),eX(e3,!0,e7),e8.reset()}catch(t){console.error(t),e4.textContent="Error occurred. Please try again later."}}),eX(e3,!1,"",!0),ek();const rt=()=>{s()},re=async()=>{try{(function(){var t=document.getElementById("loader");t&&(t.style.display="flex")})(),eX(1);let t=await eF(),e=await eJ(1);eD(e,!0,t),e5(),function(){var t=document.getElementById("loader");t&&setTimeout(function(){t.style.display="none"},1e3)}()}catch(t){console.error("Error",t)}rt()};re();
-//# sourceMappingURL=index.40668f95.js.map
+    `;e0.innerHTML=n},e6=async t=>{console.log("Open modal called with ID:",t);let e=await eV(t);e&&(e2(e),e1())},e5=()=>{let t=document.querySelectorAll(".gallery__items");t.forEach(t=>{t.addEventListener("click",async t=>{let e=t.currentTarget.dataset.id;e6(e)})});let e=document.querySelector("[data-modal-close]");e&&e.addEventListener("click",e1)},e8=document.getElementById(".modal");window.addEventListener("keydown",function(t){"Excape"===t.key&&(e8.style.display="none")});const e4=document.querySelector("#form__search"),e3=document.querySelector("#searchError");let e7=1,e9="",rt=[];e4.addEventListener("submit",async t=>{t.preventDefault();let e=e4.querySelector('[name="searchQuery"]').value;if(""===e){e3.textContent="Please write something";return}e3.textContent="",e9!==e&&(e9=e,e7=1,ek());try{let t=await eH(e9,e7);rt=await eF(),eD(t,!1,rt),e5(),1!==e7||t.results.length||(e3.textContent="Search result not successful. Enter the correct movie name."),eX(e7,!0,e9),e4.reset()}catch(t){console.error(t),e3.textContent="Error occurred. Please try again later."}}),eX(e7,!1,"",!0),ek();const re=()=>{s()},rr=async()=>{try{(function(){var t=document.getElementById("loader");t&&(t.style.display="flex")})(),eX(1);let t=await eF(),e=await eJ(1);eD(e,!0,t),e5(),function(){var t=document.getElementById("loader");t&&setTimeout(function(){t.style.display="none"},1e3)}()}catch(t){console.error("Error",t)}re()};rr();
+//# sourceMappingURL=index.30fac6fe.js.map
