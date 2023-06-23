@@ -39,7 +39,7 @@ const createButtons2 = (page, numberButtonsContainer) => {
 const numberButtonsContainer = document.getElementById(
   'numberButtonsContainer'
 );
-const currentPage = 1;
+let currentPage = 1;
 
 createButtons2(currentPage, numberButtonsContainer);
 function createButton(num) {
