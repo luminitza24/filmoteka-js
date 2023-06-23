@@ -5,8 +5,10 @@ import { handleResponse, getGalleryElement } from './markup';
 import { fetchPopularMovies } from './fetchmvs';
 import { showLoader, hideLoader } from './loader.js';
 import { showPage }  from './page.js';   
-import { initializeModal } from './modal';
+
+import { initializeModal } from './modal'; 
 import './search'; 
+
 const currentPage = 1;
 
 const initialize = () => {
