@@ -248,14 +248,19 @@
 }
 
 .close {
-  float: right;
+//  float: right;
   font-size: 20px;
   font-weight: bold;
   color: #000;
   opacity: 0.5;
   cursor: pointer;
 }
- 
+.btn-save.remove {
+  background-color: red; /* Schimbați culoarea de fundal */
+  color: white; /* Schimbați culoarea textului */
+  /* Adăugați orice alte stiluri dorite pentru a schimba aspectul butonului */
+}
 .show{
   display:block;
 }
+
