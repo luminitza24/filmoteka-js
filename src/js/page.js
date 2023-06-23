@@ -126,7 +126,6 @@ const showPage = async (page, isSearch = false, searchQuery = '') => {
   }
 };
 
-localStorage.setItem('currentPage', currentPage);
 fetchPopularMovies(currentPage)
   .then(d => {
     markupGalleryItem(d.results);
