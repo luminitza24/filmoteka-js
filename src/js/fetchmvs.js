@@ -35,7 +35,7 @@ const fetchMovieDetails = async movieId => {
     console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error('Error - movie details: ', error);
+    console.log('Error - movie details: ', error);
     throw error;
   }
 };
