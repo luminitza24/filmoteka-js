@@ -212,9 +212,8 @@
 }
 
 .modal-footer {
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ccc;
+  padding-top: 32px;
+  background-color: #fff;
   display: flex;
   justify-content: center;
 }
@@ -320,12 +319,13 @@
          line-height: 1.33;
          display: flex;
          align-items: center;
-         color: #eda70f;
+         color: #000;
          padding-top: 20px;
          margin-bottom: 10px;
          text-transform: uppercase;
          border-radius: 5px;
        }
+      
        .text__modal {
            font-style: normal;
            font-weight: 500;
@@ -333,4 +333,24 @@
            line-height: 1.33;
            color: #000;
          }
-         
+          @media screen and (min-width: 768px) {
+             .modal-content {
+               background-color: var(--main-color);
+               width: 704px;
+               min-height: 502px;
+               padding: 60px 15px;
+              
+             }
+             .modal-body{
+              display: flex;
+              flex-direction: row;
+            
+             }
+
+               
+             .img_movie{
+              width: 264px;
+               height: 373.551px;
+               flex-shrink: 0;
+             }
+            }
