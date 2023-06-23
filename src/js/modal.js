@@ -9,6 +9,62 @@ const toggleModal = () => {
 };
 
 const createModalContent = movie => {
+  const genres = movie.genres
+    ? movie.genres.map(genre => genre.name)
+    : ['Unknown'];
+
+  const coverUrl = movie.poster_path
+    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+    : nullPoster;
+
+  const markup = ` 
+      <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        <div class="modal-body">
+          <img src="${coverUrl}" alt="${
+    movie.title
+  }" loading="lazy" class="img_movie" />
+  <h5 class="modal-title">${movie.title}</h5>
+  <ul>
+          <li class="gallery__modal">
+          <p class="vote__count"> Vote/Votes 
+          <b class="details">  ${movie.vote_average}</b>
+           <b >/</b>
+           <b >${movie.vote_count}</b>
+          </p>
+          </li>
+            <li class="gallery__modal">
+            <p class="vote__count > 
+            <b class="details"> popularity ${movie.popularity}</b>
+            </p>
+            </li>
+            <li class="gallery__modal">
+            <p class="vote__count>
+            <b class="details">Original Title${movie.original_title}</b>
+            </p>
+            </li>
+            <li class="gallery__modal">
+                <p class="vote__count> 
+                <b class="details">Genre${genres.join(', ')}</b>
+                </p>
+            </li>
+            <li class="gallery__modal">
+            <h3 class="details__info">about</h3>
+                <p class="text__modal">${movie.overview}</p>
+            </li>
+            <ul/>
+        
+        <div class="modal-footer"> 
+        <button type="button" class="btn-watched btn btn-primary">${getWatchedButtonText(
+          movie.id
+        )}</button>
+        <button type="button" class="btn-queue btn btn-primary">${getQueueButtonText(
+          movie.id
+        )}</button>
+        </div>
   const genres = movie.genres ? movie.genres.map(genre => genre.name) : ['Unknown'];
   const coverUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : nullPoster;
 
