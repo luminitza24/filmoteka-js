@@ -1,13 +1,14 @@
 function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configurable:!0})}var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{},r={},n={},o=e.parcelRequirefb50;null==o&&((o=function(t){if(t in r)return r[t].exports;if(t in n){var e=n[t];delete n[t];var o={id:t,exports:{}};return r[t]=o,e.call(o.exports,o,o.exports),o.exports}var i=Error("Cannot find module '"+t+"'");throw i.code="MODULE_NOT_FOUND",i}).register=function(t,e){n[t]=e},e.parcelRequirefb50=o),o.register("bTcpz",function(e,r){t(e.exports,"openModal",function(){return f}),t(e.exports,"initializeModal",function(){return y});var n=o("c8DrE"),i=o("3huUq");let a=document.querySelector(".modal"),s=a.querySelector(".modal-dialog"),u=()=>{a.classList.toggle("show")},l=t=>{let e=t.genres?t.genres.map(t=>t.name):["Unknown"],r=t.poster_path?`https://image.tmdb.org/t/p/w500${t.poster_path}`:i.nullPoster,n=` 
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">${t.title}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <img src="${r}" alt="${t.title}" loading="lazy" class="img_movie" />
+  <h5 class="modal-title">${t.title}</h5>
+  <ul>
           <li class="gallery__modal">
           <p class="vote__count"> Vote/Votes 
           <b class="details">  ${t.vote_average}</b>
@@ -22,7 +23,7 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
             </li>
             <li class="gallery__modal">
             <p class="vote__count>
-            <b class="details">Original Title ${t.original_title}</b>
+            <b class="details">Original Title${t.original_title}</b>
             </p>
             </li>
             <li class="gallery__modal">
@@ -34,7 +35,7 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
             <h3 class="details__info">about</h3>
                 <p class="text__modal">${t.overview}</p>
             </li>
-
+</ul
         </div>
         <div class="modal-footer"> 
         <button type="button" class="btn-watched btn btn-primary">${p(t.id)}</button>
@@ -62,4 +63,4 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
     </div>
   </li>
     `},l=()=>document.querySelector(".gallery")}),o.register("c6Rwr",function(e,r){t(e.exports,"getGenres",function(){return i}),t(e.exports,"fetchGenreList",function(){return a}),o("2shzp");var n=o("bRlFp");let i=(t,e)=>{let r=[];for(let n of t){let t=e.find(t=>t.id===n);t&&r.push(t.name)}return 0===r.length&&r.push("Other"),r},a=async()=>{try{let t=await (0,n.default).get("https://api.themoviedb.org/3/genre/movie/list?api_key=44cd7d40e9c9ffc80f6b2e51bac6d9ee"),e=t.data.genres;return e}catch(t){return console.error("Error: ",t),[]}}}),o.register("2ywcv",function(e,r){t(e.exports,"clearGallery",function(){return n});let n=()=>{let t=document.querySelector(".gallery");t&&(t.innerHTML="")}}),o.register("lQVoc",function(e,r){t(e.exports,"getGalleryElement",function(){return n});let n=()=>document.querySelector(".gallery")}),o.register("gjiCh",function(e,r){function n(){var t=document.getElementById("loader");t&&(t.style.display="flex")}function o(){var t=document.getElementById("loader");t&&setTimeout(function(){t.style.display="none"},1e3)}t(e.exports,"showLoader",function(){return n}),t(e.exports,"hideLoader",function(){return o})});
-//# sourceMappingURL=index.cb8ada1e.js.map
+//# sourceMappingURL=index.aa37b2a7.js.map
