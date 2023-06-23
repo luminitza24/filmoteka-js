@@ -28,7 +28,7 @@ const fetchGenreList = async () => {
     const genres = response.data.genres;
     return genres;
   } catch (error) {
-    console.error('Error: ', error);
+    console.log('Error: ', error);
     return [];
   }
 };

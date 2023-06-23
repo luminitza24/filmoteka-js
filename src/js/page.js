@@ -1,6 +1,7 @@
 import { fetchGenreList } from './fetchGenre';
-import { handleResponse } from './markup';
+import { handleResponse, markupGalleryItem } from './markup';
 import { fetchMovies, fetchPopularMovies } from './fetchmvs';
+import { openModal } from './modal';
 
 const btnsContainer = document.querySelector('.number-buttons');
 const createButtons2 = (page, numberButtonsContainer) => {
@@ -35,7 +36,9 @@ const createButtons2 = (page, numberButtonsContainer) => {
   }
 };
 
-const numberButtonsContainer = document.getElementById('numberButtonsContainer');
+const numberButtonsContainer = document.getElementById(
+  'numberButtonsContainer'
+);
 const currentPage = 1;
 
 createButtons2(currentPage, numberButtonsContainer);
@@ -122,6 +125,16 @@ const showPage = async (page, isSearch = false, searchQuery = '') => {
     console.error('Error', error);
   }
 };
+
+fetchPopularMovies(currentPage)
+  .then(d => {
+    markupGalleryItem(d.results);
+    currentPage = localStorage.getItem('currentPage');
+    paginationButtons(currentPage, d.total_pages);
+    openModal(d);
+  })
+  .catch(e => console.log(e))
+  .finally(() => {});
 
 const paginationButtons = document.querySelectorAll('.pagination__button');
 
