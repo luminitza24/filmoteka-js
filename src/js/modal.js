@@ -10,7 +10,7 @@ const toggleModal = () => {
 
 const createModalContent = movie => {
   const genres = movie.genres ? movie.genres.map(genre => genre.name) : ['Unknown'];
-  const coverUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : nullPoster; 
+  const coverUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : nullPoster;
 
   const markup = `
     <div class="modal-content">
@@ -75,7 +75,6 @@ const openModal = async movieId => {
     });
   }
 };
-
 const handleSave = (galleryItem, type) => {
   const id = galleryItem.getAttribute('data-id');
 
@@ -120,27 +119,23 @@ const handleSave = (galleryItem, type) => {
   const watchedButton = modal.querySelector('.btn-watched');
   const queueButton = modal.querySelector('.btn-queue');
 
-  
-    watchedButton.textContent = getWatchedButtonText(id);
-    queueButton.textContent = getQueueButtonText(id);
- 
+  watchedButton.textContent = getWatchedButtonText(id);
+  queueButton.textContent = getQueueButtonText(id);
+
   if (window.location.pathname.includes('library.html')) {
     window.location.reload();
   }
 };
-
 const getWatchedButtonText = id => {
   const savedData = JSON.parse(localStorage.getItem('savedData')) || [];
   const existingMovie = savedData.find(movie => movie.id === id);
   return existingMovie && existingMovie.watched ? 'Remove from Watched' : 'Watched';
 };
-
 const getQueueButtonText = id => {
   const savedData = JSON.parse(localStorage.getItem('savedData')) || [];
   const existingMovie = savedData.find(movie => movie.id === id);
   return existingMovie && existingMovie.queue ? 'Remove from Queue' : 'Queue';
 };
-
 const initializeModal = () => {
   const galleryElements = document.querySelectorAll('.gallery__items');
 
@@ -154,19 +149,16 @@ const initializeModal = () => {
       event.currentTarget.classList.add('selected');
     });
   });
-
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       toggleModal();
     }
   });
-
   modal.addEventListener('click', event => {
     if (!modal.contains(event.target) || event.target === modal) {
       toggleModal();
     }
   });
-
   const watchedButton = modalContent.querySelector('.btn-watched');
   const queueButton = modalContent.querySelector('.btn-queue');
 
@@ -180,7 +172,7 @@ const initializeModal = () => {
   if (queueButton) {
     queueButton.addEventListener('click', () => {
       const galleryItem = document.querySelector('.gallery__items.selected');
-     handleSave(galleryItem, 'queue');
+      handleSave(galleryItem, 'queue');
       queueButton.textContent = getQueueButtonText(galleryItem.dataset.id);
     });
   }
