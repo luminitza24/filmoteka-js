@@ -171,30 +171,29 @@
 .modal {
   display: none;
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 99;
   transition: opacity 0.3s ease;
-
 }
 
 .modal.show {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 .hidden {
   display: none;
 }
-.modal-dialog { 
+.modal-dialog {
   width: 280px;
-  height: 930px;
   flex-shrink: 0;
   background-color: #ffff;
-margin: 0 auto;
-
+  margin: 0 auto;
 }
 
 .modal-header {
@@ -207,10 +206,6 @@ margin: 0 auto;
 .modal-title {
   margin: 0;
   color: var(--dark-color);
-}
-
-.modal-body {
-  padding: 10px;
 }
 
 .modal-footer {
@@ -275,8 +270,8 @@ margin: 0 auto;
   &:hover,
   :active {
     background-color: #b92f2c;
-    color: #000
-  };
+    color: #000;
+  }
 }
 
 .btn-save.remove {
@@ -304,7 +299,6 @@ margin: 0 auto;
   border-radius: 5px;
   width: 100%;
   height: 357px;
-
 
   .btn-watched:hover,
   .btn-watched:focus {
@@ -347,7 +341,7 @@ margin: 0 auto;
   text-transform: uppercase;
   border-radius: 5px;
 }
-.modal-content{
+.modal-content {
   position: relative;
 }
 .text__modal {
@@ -362,7 +356,6 @@ margin: 0 auto;
   .modal-content {
     background-color: var(--main-color);
     width: 704px;
-    min-height: 502px;
     padding: 60px 15px;
   }
   .modal-body {
