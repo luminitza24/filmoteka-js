@@ -18,17 +18,18 @@ const createModalContent = movie => {
 
   const markup = `
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">${movie.title}</h5>
+      <div class="modal-header"> 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+      
         <img src="${coverUrl}" alt="${
     movie.title
   }" loading="lazy" class="img_movie" />
         <ul class="gallery__modal">
+        <h5 class="modal-title">${movie.title}</h5>
           <li class="vote__count">Vote/Votes: <b class="details">${
             movie.vote_average
           }</b>/<b>${movie.vote_count}</b></li>
@@ -45,8 +46,8 @@ const createModalContent = movie => {
             <h3 class="details__info">About</h3>
             <p class="text__modal">${movie.overview}</p>
           </li>
-        </ul>
-      </div>
+        
+      
       <div class="modal-footer">
         <button type="button" class="btn-watched btn btn-primary">${getWatchedButtonText(
           movie.id
@@ -55,6 +56,8 @@ const createModalContent = movie => {
           movie.id
         )}</button>
       </div>
+      </div>
+      </ul>
     </div>
   `;
 
