@@ -47,7 +47,7 @@ const createModalContent = movie => {
             <p class="text__modal">${movie.overview}</p>
           </li>
         
-      
+        </ul>
       <div class="modal-footer">
         <button type="button" class="btn-watched btn btn-primary">${getWatchedButtonText(
           movie.id
@@ -57,7 +57,7 @@ const createModalContent = movie => {
         )}</button>
       </div>
       </div>
-      </ul>
+    
     </div>
   `;
 
