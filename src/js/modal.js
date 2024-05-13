@@ -44,6 +44,7 @@ const createModalContent = movie => {
           )}</b></li>
           <li class="vote__count">
             <h3 class="details__info">About</h3>
+             <button class="btn-cast">Cast</button>
             <p class="text__modal">${movie.overview}</p>
           </li>
         
