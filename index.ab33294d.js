@@ -16,6 +16,7 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
           <li class="vote__count">Genre: <b class="details">${e.join(", ")}</b></li>
           <li class="vote__count">
             <h3 class="details__info">About</h3>
+             <button class="btn-cast">Cast</button>
             <p class="text__modal">${t.overview}</p>
           </li>
         
@@ -47,4 +48,4 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
     </div>
   </li>
     `},l=()=>document.querySelector(".gallery")}),i.register("c6Rwr",function(e,r){t(e.exports,"getGenres",function(){return o}),t(e.exports,"fetchGenreList",function(){return a}),i("2shzp");var n=i("bRlFp");let o=(t,e)=>{let r=[];for(let n of t){let t=e.find(t=>t.id===n);t&&r.push(t.name)}return 0===r.length&&r.push("Other"),r},a=async()=>{try{let t=await (0,n.default).get("https://api.themoviedb.org/3/genre/movie/list?api_key=44cd7d40e9c9ffc80f6b2e51bac6d9ee"),e=t.data.genres;return e}catch(t){return console.log("Error: ",t),[]}}}),i.register("2ywcv",function(e,r){t(e.exports,"clearGallery",function(){return n});let n=()=>{let t=document.querySelector(".gallery");t&&(t.innerHTML="")}}),i.register("lQVoc",function(e,r){t(e.exports,"getGalleryElement",function(){return n});let n=()=>document.querySelector(".gallery")}),i.register("gjiCh",function(e,r){function n(){var t=document.getElementById("loader");t&&(t.style.display="flex")}function i(){var t=document.getElementById("loader");t&&setTimeout(function(){t.style.display="none"},1e3)}t(e.exports,"showLoader",function(){return n}),t(e.exports,"hideLoader",function(){return i})});
-//# sourceMappingURL=index.5693d58c.js.map
+//# sourceMappingURL=index.ab33294d.js.map
